@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Sqlite" id="Project-1f0c" database="Sqlite" >
+	<schema name="Default" >
+		<table name="TblCURRICULO" prior="TblNOME" >
+			<column name="ID_CURRICULO" prior="NOME" type="TEXT" jt="-1" mandatory="y" />
+			<column name="CARGO" type="TEXT" jt="-1" />
+			<index name="pk_TblNOME" unique="PRIMARY_KEY" >
+				<column name="ID_CURRICULO" />
+			</index>
+		</table>
+		<table name="TblEXPERIENCIA" >
+			<column name="ID_EXPERIENCIA" type="TEXT" jt="-1" mandatory="y" />
+			<column name="Colégio Augusto Laranja" type="TEXT" jt="-1" >
+				<comment><![CDATA[2010-2020]]></comment>
+			</column>
+			<column name="ID_CURRICULO" type="TEXT" jt="-1" />
+			<index name="pk_TblEXPERIENCIA" unique="PRIMARY_KEY" >
+				<column name="ID_EXPERIENCIA" />
+			</index>
+			<fk name="fk_TblEXPERIENCIA" to_schema="Default" to_table="TblCURRICULO" >
+				<fk_column name="ID_CURRICULO" pk="ID_CURRICULO" />
+			</fk>
+		</table>
+		<table name="TblFORMACAO" >
+			<column name="ID_FORMACAO" type="TEXT" jt="-1" mandatory="y" />
+			<column name="Curso CNA 2014 2020" type="TEXT" jt="-1" />
+			<column name="ID_CURRICULO" type="TEXT" jt="-1" />
+			<index name="pk_TblFORMACAO" unique="PRIMARY_KEY" >
+				<column name="ID_FORMACAO" />
+			</index>
+			<fk name="fk_TblFORMACAO" to_schema="Default" to_table="TblCURRICULO" >
+				<fk_column name="ID_CURRICULO" pk="ID_CURRICULO" />
+			</fk>
+		</table>
+		<table name="TblHABILIDADES" >
+			<column name="Linguagem Python e GDScript" type="INTEGER" jt="4" />
+			<column name="ID_CURRICULO" type="TEXT" jt="-1" />
+			<fk name="fk_TblHABILIDADES" to_schema="Default" to_table="TblCURRICULO" >
+				<fk_column name="ID_CURRICULO" pk="ID_CURRICULO" />
+			</fk>
+		</table>
+		<table name="TblPERSONALIDADE" >
+			<column name="Ambição" prior="Raciocínio rápido" type="TEXT" jt="-1" />
+			<column name="Criatividade" type="TEXT" jt="-1" />
+			<column name="Boa comunicação em grupo" type="TEXT" jt="-1" />
+			<column name="Flexibilidade" type="TEXT" jt="-1" />
+			<column name="ID_CURRICULO" type="TEXT" jt="-1" />
+			<fk name="fk_TblPERSONALIDADE" to_schema="Default" to_table="TblCURRICULO" >
+				<fk_column name="ID_CURRICULO" pk="ID_CURRICULO" />
+			</fk>
+		</table>
+		<table name="TblREALIZACOES" >
+			<column name="ID_REALIZACOES" type="TEXT" jt="-1" mandatory="y" />
+			<column name="Projeto para UFAL" type="TEXT" jt="-1" />
+			<column name="ID_CURRICULO" type="TEXT" jt="-1" />
+			<index name="pk_TblREALIZACOES" unique="PRIMARY_KEY" >
+				<column name="ID_REALIZACOES" />
+			</index>
+			<fk name="fk_TblREALIZACOES" to_schema="Default" to_table="TblCURRICULO" >
+				<fk_column name="ID_CURRICULO" pk="ID_CURRICULO" />
+			</fk>
+		</table>
+		<table name="TblSOBRE MIM" >
+			<column name="ID_SOBREMIM" type="TEXT" jt="-1" mandatory="y" />
+			<column name="Telefone" prior="TELEFONE" type="TEXT" jt="-1" >
+				<comment><![CDATA[(11) 99999-9999]]></comment>
+			</column>
+			<column name="Endereço" prior="ENDEREÇO" type="TEXT" jt="-1" >
+				<comment><![CDATA[Rua Cristaldo Renato 283]]></comment>
+			</column>
+			<column name="E-MAIL" type="TEXT" jt="-1" >
+				<comment><![CDATA[felipe.spina@sou.inteli.com.edu]]></comment>
+			</column>
+			<column name="Trajetória" prior="TRAJETÓRIA" type="TEXT" jt="-1" >
+				<comment><![CDATA[Apoś me formar em 2020 eu logo entrei no Insper (Instituo de Ensino e Pesquisa) no curso de Engenharia de Computação. Fiz e passei o primeiro semestre de forma online, e no meio do segundo semestre optei por trancar a faculdade, por sentir que não era aquilo que queria.]]></comment>
+			</column>
+			<column name="ID_CURRICULO" type="TEXT" jt="-1" />
+			<index name="pk_TblSOBRE MIM" unique="PRIMARY_KEY" >
+				<column name="ID_SOBREMIM" />
+			</index>
+			<fk name="fk_TblSOBRE MIM" to_schema="Default" to_table="TblCURRICULO" >
+				<fk_column name="ID_CURRICULO" pk="ID_CURRICULO" />
+			</fk>
+		</table>
+	</schema>
+	<connector name="Sqlite" database="Sqlite" driver_class="org.sqlite.JDBC" driver_jar="sqlite-jdbc-3.40.0.0.jar" driver_desc="Standard" host="localhost" port="7210" instance="C:/Users/fekin/OneDrive/Documentos/GitHub/Tutorial_M2_Felipe_Sabino_Spina/SEMANA_02/Entrega_atividade_ponderada/entrega_ponderada" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-341" show_relation="columns" >
+		<entity schema="Default" name="TblCURRICULO" color="C1D8EE" x="496" y="48" />
+		<entity schema="Default" name="TblEXPERIENCIA" color="C1D8EE" x="48" y="80" />
+		<entity schema="Default" name="TblFORMACAO" color="C1D8EE" x="48" y="240" />
+		<entity schema="Default" name="TblHABILIDADES" color="C1D8EE" x="848" y="320" />
+		<entity schema="Default" name="TblPERSONALIDADE" color="C1D8EE" x="880" y="480" />
+		<entity schema="Default" name="TblREALIZACOES" color="C1D8EE" x="64" y="416" />
+		<entity schema="Default" name="TblSOBRE MIM" color="C1D8EE" x="896" y="112" />
+	</layout>
+</project>
