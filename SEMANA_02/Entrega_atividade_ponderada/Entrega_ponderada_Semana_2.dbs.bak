@@ -13,7 +13,7 @@
 			<column name="Insper" type="TEXT" jt="-1" >
 				<comment><![CDATA[Insper]]></comment>
 			</column>
-			<column name="ID_CURRICULO" type="INTEGER" jt="4" mandatory="y" />
+			<column name="ID_CURRICULO" type="INTEGER" jt="4" />
 			<index name="pk_TblEXPERIENCIA" unique="PRIMARY_KEY" >
 				<column name="ID_EXPERIENCIA" />
 			</index>
@@ -24,7 +24,7 @@
 		<table name="TblFORMACAO" >
 			<column name="ID_FORMACAO" type="INTEGER" jt="4" mandatory="y" />
 			<column name="CURSO CNA 2014 2020" type="TEXT" jt="-1" />
-			<column name="ID_CURRICULO" type="INTEGER" jt="4" mandatory="y" />
+			<column name="ID_CURRICULO" type="INTEGER" jt="4" />
 			<index name="pk_TblFORMACAO" unique="PRIMARY_KEY" >
 				<column name="ID_FORMACAO" />
 			</index>
@@ -35,7 +35,7 @@
 		<table name="TblHABILIDADES" >
 			<column name="ID_HABILIDADES" type="INTEGER" jt="4" mandatory="y" />
 			<column name="Linguagem Python e GDScript" type="TEXT" jt="-1" />
-			<column name="ID_CURRICULO" type="INTEGER" jt="4" mandatory="y" />
+			<column name="ID_CURRICULO" type="INTEGER" jt="4" />
 			<index name="pk_TblHABILIDADES" unique="PRIMARY_KEY" >
 				<column name="ID_HABILIDADES" />
 			</index>
@@ -48,7 +48,7 @@
 			<column name="Criatividade" type="INTEGER" jt="4" />
 			<column name="Ambição" type="TEXT" jt="-1" />
 			<column name="Flexibilidade" type="INTEGER" jt="4" />
-			<column name="ID_CURRICULO" type="INTEGER" jt="4" mandatory="y" />
+			<column name="ID_CURRICULO" type="INTEGER" jt="4" />
 			<index name="pk_TblPERSOALIDADE" unique="PRIMARY_KEY" >
 				<column name="ID_PERSONALIDADE" />
 			</index>
@@ -60,7 +60,7 @@
 			<column name="ID_REALIZACOES" type="INTEGER" jt="4" mandatory="y" />
 			<column name="Projeto para a UFAL" type="TEXT" jt="-1" />
 			<column name="Projeto voluntário com o colégio" type="TEXT" jt="-1" />
-			<column name="ID_CURRICULO" type="INTEGER" jt="4" mandatory="y" />
+			<column name="ID_CURRICULO" type="INTEGER" jt="4" />
 			<index name="pk_TblREALIZACOES" unique="PRIMARY_KEY" >
 				<column name="ID_REALIZACOES" />
 			</index>
@@ -74,7 +74,7 @@
 			<column name="Trajetória" type="TEXT" jt="-1" />
 			<column name="Endereço" type="TEXT" jt="-1" />
 			<column name="e-mail" type="TEXT" jt="-1" />
-			<column name="ID_CURRICULO" type="INTEGER" jt="4" mandatory="y" />
+			<column name="ID_CURRICULO" type="INTEGER" jt="4" />
 			<index name="pk_TblSOBRE_MIM" unique="PRIMARY_KEY" >
 				<column name="ID_SOBRE_MIM" />
 			</index>
@@ -87,7 +87,7 @@
 	<layout name="Main Layout" id="Layout-239e" show_relation="columns" >
 		<entity schema="Default" name="TblCURRICULO" color="C1D8EE" x="480" y="48" />
 		<entity schema="Default" name="TblEXPERIENCIA" color="C1D8EE" x="64" y="240" />
-		<entity schema="Default" name="TblFORMACAO" color="C1D8EE" x="64" y="464" />
+		<entity schema="Default" name="TblFORMACAO" color="C1D8EE" x="80" y="464" />
 		<entity schema="Default" name="TblHABILIDADES" color="C1D8EE" x="800" y="272" />
 		<entity schema="Default" name="TblPERSOALIDADE" color="C1D8EE" x="800" y="432" />
 		<entity schema="Default" name="TblREALIZACOES" color="C1D8EE" x="48" y="64" />
