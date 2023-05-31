@@ -1,23 +1,31 @@
 const express = require('express');
 
+
 const db = require('./db.js');
+
 
 
 const app = express();
 
 
+
 const bodyParser = require('body-parser');
+
 
 const path = require('path');
 
+
 app.use(bodyParser.json());
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
 app.use(express.static('css'));
 
+
 // Rotas
-    // Rota principal
+
     app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname + "/html/index.html"));
     });
@@ -26,6 +34,7 @@ app.use(express.static('css'));
     app.get('/allTables', (req, res) => {
         res.sendFile(path.join(__dirname + "/html/allTables.html"));
     });
+
 
     // CRUD r
     app.get('/perfil', (req, res) => {
@@ -50,10 +59,12 @@ app.use(express.static('css'));
         res.redirect('/');
     });
 
+
     // CRUD u
     app.get('/editPerfil', (req, res) => {
         res.sendFile(path.join(__dirname + "/html/editPerfil.html"));
     });
+
 
     app.get('/editPerfil/updateValues', (req, res) => {
         const ID = req.query.ID;
@@ -94,8 +105,7 @@ app.use(express.static('css'));
     });
 //
 
-// SELECT
-    //formacao
+
     app.get('/formacao', (req, res) => {
         db.all("SELECT * FROM tbl_formacao", (err, rows) => {
             if(err){
@@ -109,7 +119,7 @@ app.use(express.static('css'));
         });
     });
 
-    // personalidade
+
     app.get('/personalidade', (req, res) => {
         db.all("SELECT * FROM tbl_personalidade", (err, rows) => {
             if(err){
@@ -123,7 +133,7 @@ app.use(express.static('css'));
         });
     });
 
-    // habilidade
+
     app.get('/habilidades', (req, res) => {
         db.all("SELECT * FROM tbl_habilidades", (err, rows) => {
             if(err){
@@ -137,7 +147,7 @@ app.use(express.static('css'));
         });
     });
 
-    //  experiência
+   
     app.get('/experiencia', (req, res) => {
         db.all("SELECT * FROM tbl_experiencia", (err, rows) => {
             if(err){
@@ -151,7 +161,9 @@ app.use(express.static('css'));
         });
     });
 
-    // realizações
+
+
+    
     app.get('/realizacoes', (req, res) => {
         db.all("SELECT * FROM tbl_realizacoes", (err, rows) => {
             if(err){
@@ -166,6 +178,7 @@ app.use(express.static('css'));
     });
 
 //
+
 
 //server
 app.listen(8081, function(){

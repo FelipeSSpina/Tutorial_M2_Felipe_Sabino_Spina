@@ -2,12 +2,14 @@ const sqlite3 = require('sqlite3').verbose()
 
 const DBSOURCE = "db.sqlite" 
 
+
 let db = new sqlite3.Database(DBSOURCE, (err) => {
   if (err) {
     console.error(err.message);
     throw err;
   } else {
-    console.log('Conexão com o banco de dados estabelecida.')
+
+    console.log('Conexão estabelecida.')
     db.run(`CREATE TABLE IF NOT EXISTS tbl_perfil (
             ID INTEGER PRIMARY KEY AUTOINCREMENT,
             NOME text, 
@@ -24,6 +26,9 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
           console.log('Success');
         }
     });
+
+
+
     db.run(`CREATE TABLE IF NOT EXISTS tbl_formacao (
             ID_CURSO INTEGER PRIMARY KEY AUTOINCREMENT,
             NOME_CURSO text, 
@@ -40,6 +45,7 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
           console.log('Success');
         }
     });
+
     db.run(`CREATE TABLE IF NOT EXISTS tbl_personalidade (
             ID_PERSONALIDADE INTEGER PRIMARY KEY AUTOINCREMENT,
             CRIATIVO integer, 
@@ -56,6 +62,7 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
           console.log('Success');
         }
     });
+
     db.run(`CREATE TABLE IF NOT EXISTS tbl_habilidades (
             ID_HABILIDADE INTEGER PRIMARY KEY AUTOINCREMENT,
             ILLUSTRATOR integer, 
@@ -72,6 +79,8 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
           console.log('Success');
         }
     });
+
+
     db.run(`CREATE TABLE IF NOT EXISTS tbl_experiencia (
             ID_EMPRESA INTEGER PRIMARY KEY AUTOINCREMENT,
             NOME_EMPRESA integer, 
@@ -90,6 +99,9 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
           console.log('Success');
         }
     });
+
+
+
     db.run(`CREATE TABLE IF NOT EXISTS tbl_realizacoes (
             ID_REALIZACAO INTEGER PRIMARY KEY AUTOINCREMENT,
             DATA_REALIZACOES integer, 

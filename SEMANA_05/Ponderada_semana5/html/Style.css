@@ -39,7 +39,7 @@ img {
 
 #qualificacoes {
     width: 60%;
-    background-color: #F0F7FE;
+    background-color: #807ef3;
     padding-left: 2rem;
 }
 
@@ -48,7 +48,7 @@ img {
 }
 
 #qualificacoes h2 {
-    background-color: #468189;
+    background-color: #618deb;
     color: #F0F7FE;
     width: 40%;
     margin: 2rem 0;
@@ -60,7 +60,7 @@ img {
 }
 
 .cargo {
-    color: #B0A1BA
+    color: #b95ef7
 }
 
 .titulo {
@@ -72,7 +72,7 @@ img {
 }
 
 #aside {
-    background-color: #468189;
+    background-color: #5ea6e0;
     width: 40%;
 }
 
@@ -81,11 +81,11 @@ img {
     font-size: 1rem;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
-    color: #F0F7FE;
+    color: #000508;
 }
 
 #aside p {
-    color: #F0F7FE;
+    color: #010c18;
     margin: 1rem 0;
     text-align: center;
     font-size: 0.75rem;
@@ -93,7 +93,7 @@ img {
 
 .divider {
     width: 70%;
-    border: 1px solid #F0F7FE;
+    border: 1px solid #93a5b8;
     margin: 0 auto;
 }
 
