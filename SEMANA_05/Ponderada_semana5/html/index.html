@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>Currículo - Registro de perfil</title>
+    </head>
+    <body>
+        <h1>Currículo - Ponderada semana 07</h1>
+        <section>
+            <a href='/allTables'><button>Acessar todas as tabelas</button></a>
+        </section>
+        <section>
+            <h2>C -> CRUD</h2>
+            <form method="POST" action="/perfil">
+                <label for="NOME">Nome:</label>
+                <input type="text" name="NOME" id="NOME" required>
+                <br>
+                <label for="IDADE">Idade:</label>
+                <input type="number" name="IDADE" id="IDADE" required>
+                <br>
+                <label for="CARGO">Cargo atual:</label>
+                <input type="text" name="CARGO" id="CARGO" required>
+                <br>
+                <label for="ENDERECO">Endereço:</label>
+                <input type="text" name="ENDERECO" id="ENDERECO" required>
+                <br>
+                <label for="TELEFONE">Telefone:</label>
+                <input type="number" name="TELEFONE" id="TELEFONE" required>
+                <br>
+                <label for="EMAIL">Email para contato:</label>
+                <input type="text" name="EMAIL" id="EMAIL" required>
+                <br>
+                <label for="DESCRICAO">Descrição de seu perfil:</label>
+                <input type="text" name="DESCRICAO" id="DESCRICAO" required>
+                <br>
+                <button type="submit">Criar perfil</button>
+            </form>
+        </section>
+        <section>
+            <h2>R -> CRUD</h2>
+            <a href='/perfil'><button>Visualizar todos os perfis</button></a>
+        </section>
+        <section>
+            <h2>U -> CRUD</h2>
+            <a href='/editPerfil'><button>Editar perfil</button></a>
+        </section>
+        <section>
+            <h2>D -> CRUD</h2>
+            <section>
+                <form onsubmit="deletePerfil(event)" action="/perfil/:id">
+                    <label for="id">Insira o ID do perfil que deseja excluir:</label>
+                    <input type="number" name="id" id="id" required>
+                    <br>
+                    <button type="submit">Deletar perfil</button>
+                </form>
+                <script>
+                    function deletePerfil(event){
+                        event.preventDefault();
+                        const id = document.getElementById('id').value;
+                        fetch(`/perfil/${id}`, {
+                            method: 'DELETE',
+                        })
+                        .then(response => {
+                            if (!response.ok){
+                                throw new Error(response.statusText);
+                            }
+                            alert('Perfil excluído com sucesso!');
+                        })
+                        .catch(error => {
+                            console.error(error);
+                            alert('Erro ao excluir perfil.');
+                        });
+                    };
+                </script>
+            </section>
+        </section>
+        <section>
+            <h1>Interações com o Jquery:</h1>
+            <button id="botaoJquery">Clique aqui!</button>
+            <div id="mensagem"></div>
+            <button id="botaoMostrar">Mostrar elemento</button>
+            <button id="botaoEsconder">Esconder elemento</button>
+            <div id="elemento">Clique nos botões para mostrar/ocultar os elementos.</div>
+        </section>
+        <script src="jquery.js"></script>
+    </body>
+</html>
