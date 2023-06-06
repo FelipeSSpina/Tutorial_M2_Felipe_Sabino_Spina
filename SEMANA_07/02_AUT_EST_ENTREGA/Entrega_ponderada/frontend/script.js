@@ -1,4 +1,5 @@
-// jquery para interações com a página
+// jQUERY
+
 $(document).ready(function() {
     $('#formacao').click( function() {
         $('.formacao div').slideToggle();
@@ -6,6 +7,8 @@ $(document).ready(function() {
 
             
 })
+
+
 
 $(document).ready(function(){
     $('#experiencia').click( function() {
@@ -18,11 +21,14 @@ $(document).ready(function(){
 })
 
 
-// Iniciando variável de id
+// Início da variável
+
 let id = 4;
 
-// Iniciando ajax
-// Colocando caminho, método. OBS: Se eu utilizasse o post deveria colocar uma opção de data com um objeto
+// AJAX . AQUI REALIZEI A UTILIZAÇÃO DO AJAX
+
+// CAMINHO E O MÉTODO
+
 $.ajax({
     url: `atualizaPessoas?id=${id}`,
     method: 'get'
@@ -38,7 +44,8 @@ $.ajax({
     })
 })
 
-// Pegando dados de formação da pessoa
+
+// DADOS DE FORMAÇÃO
 $.get('/formacao', {id: id}, (res) => {
     // console.log(res);
     for (i = 0; i < res.length; i++) {
@@ -50,7 +57,8 @@ $.get('/formacao', {id: id}, (res) => {
     
 }, 'json')
 
-// Pegando dados de experiência da pessoa
+
+// DADOS DE EXPERIÊNCIA
 $.get('/experiencia', {id: id}, (res) => {
     // console.log(res);
     for (i = 0; i < res.length; i++) {
@@ -61,7 +69,7 @@ $.get('/experiencia', {id: id}, (res) => {
     }
 }, 'json')
 
-// Pegando dados de habilidades da pessoa
+// DADOS DE HABILIDADE
 $.get('/habilidades', {id: id}, (res) => {
     // console.log(res);
     for (i = 0; i < res.length; i++) {
@@ -69,7 +77,7 @@ $.get('/habilidades', {id: id}, (res) => {
     }
 }, 'json')
 
-// Pegando dados de personalidade da pessoa
+// DADOS DE PERSONALIDADE
 $.get('/personalidade', {id: id}, (res) => {
     // console.log(res);
     for (i = 0; i < res.length; i++) {
@@ -77,7 +85,7 @@ $.get('/personalidade', {id: id}, (res) => {
     }
 }, 'json')
 
-// Pegando dados de realizações da pessoa
+// DADOS DE REALIZAÇÕES
 $.get('/realizacoes', {id: id}, (res) => {
     // console.log(res);
     for (i = 0; i < res.length; i++) {

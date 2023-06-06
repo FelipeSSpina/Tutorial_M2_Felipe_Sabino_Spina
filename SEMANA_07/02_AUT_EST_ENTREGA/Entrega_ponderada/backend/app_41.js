@@ -1,20 +1,16 @@
 const express = require('express'); 
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-
 const sqlite3 = require('sqlite3').verbose();
 const DBPATH = './data/db_curriculo.db';
 const path = require('path');
-
 const hostname = '127.0.0.1';
 const port = 3000;
 const app = express();
-
-/* Colocar toda a parte estática no frontend */
 app.use(express.static("./frontend"));
 
 /* Definição dos endpoints */
-/******** CRUD ************/
+
 app.use(express.json());
 
 // Redirecionando para arquivos html
@@ -23,7 +19,7 @@ app.get('/currículo', (req, res) => {
 })
 
 
-// Retorna todos registros (é o R do CRUD - Read)
+// Retorna todos registros (Read)
 app.get('/listaPessoas', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
@@ -38,7 +34,7 @@ app.get('/listaPessoas', (req, res) => {
 	db.close(); // Fecha o banco
 });
 
-// Insere um registro (é o C do CRUD - Create)
+// Insere um registro (Create)
 app.post('/inserePessoas', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
@@ -55,7 +51,7 @@ app.post('/inserePessoas', urlencodedParser, (req, res) => {
 	res.end();
 });
 
-// Monta o formulário para o update (é o U do CRUD - Update)
+// Monta o formulário para o update (Update)
 app.get('/atualizaPessoas', (req, res) => {
 	res.statusCode = 200;
 	console.log(req.query);
@@ -73,7 +69,7 @@ app.get('/atualizaPessoas', (req, res) => {
 	db.close(); // Fecha o banco
 });
 
-// Atualiza um registro (é o U do CRUD - Update)
+// Atualiza um registro (Update)
 app.post('/atualizaPessoas', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
@@ -90,7 +86,7 @@ app.post('/atualizaPessoas', urlencodedParser, (req, res) => {
 	db.close(); // Fecha o banco
 });
 
-// Exclui um registro (é o D do CRUD - Delete)
+// Exclui um registro (Delete)
 app.get('/removePessoas', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
