@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Currículo</title>
+</head>
+<body class="grid-container">
+    <header class="grid-item ">
+        <figure><img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=600" alt="imagem de pessoa" width="100px"></figure>
+        <div>
+            <h1 id="userName"></h1>
+            <h2 id="userCargo"></h2>
+        </div>
+    </header>
+    <aside class="grid-item">
+        <article>
+            <h2>Sobre mim</h2>
+            <div class="grid-in-line">
+                <figure><img src="https://img.icons8.com/ios/50/place-marker--v1.png" alt="pin localização" width="50px"></figure>
+                <div>
+                    <h3 id="endereco"></h3>
+                </div>
+                <br>
+            </div>
+            <div class="grid-in-line">
+                <figure><img src="https://img.icons8.com/ios/50/phone--v1.png" alt="pin localização" width="50px"></figure>
+                <div>
+                    <h3 id="telefone"></h3>
+                </div>
+            </div>
+            <div class="grid-in-line">
+                <figure><img src="https://img.icons8.com/ios/50/new-post--v1.png" alt="pin localização" width="50px"></figure>
+                <div>
+                    <h3 id="email"></h3>
+                </div>
+            </div>
+            <p id="descricao-sobre-mim">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                 Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
+                 unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                 It has survived not only five centuries, but also the leap into electronic typesetting, 
+                 remaining essentially unchanged. It was popularised in the 1960s with the release of 
+                 Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
+                 software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </article>
+        <article>
+            <h2>Habilidades</h2>
+            <ul>
+                <li id="li-habilidade0">Ilustrator</li>
+                <li id="li-habilidade1">Photoshop</li>
+                <li id="li-habilidade2">Corel Draw</li>
+            </ul>
+        </article>
+        <article>
+            
+            <h2>Personalidade</h2>
+            <ul>
+                <li id="li-personalidade0">Lorem Ipsum</li>
+                <li id="li-personalidade1">Lorem Ipsum</li>
+                <li id="li-personalidade2">Lorem Ipsum</li>
+            </ul>
+        </article>
+    </aside>
+    <main class="grid-item">
+        <article class="formacao">
+            <h2 id="formacao">Formação</h2>
+            <div class="background">
+                <div class="inline">
+                    <p id="curso0">Curso</p>
+                    <p><strong>|</strong></p>
+                    <p id="datas0">2006 - 2010</p>
+                </div>
+                <p id="descricao-formacao0">Descrição</p>
+            </div>
+            <div class="background">
+                <div class="inline">
+                    <p id="curso1">Curso</p>
+                    <p><strong>|</strong></p>
+                    <p id="datas1">2010 - 2016</p>
+                </div>
+                <p id="descricao-formacao1">Descrição</p>
+            </div>
+            <div class="background">
+                <div class="inline">
+                    <p id="curso2">Curso</p>
+                    <p><strong>|</strong></p>
+                    <p id="datas2">2016 - 2022</p>
+                </div>
+                <p id="descricao-formacao2">Descrição</p>
+            </div>
+        </article>
+        <article class="experiencia">
+            <h2 id="experiencia">Experiência</h2>
+            <div class="background">
+                <div class="inline">
+                    <p id="nome-experiencia0">Nome da empresa</p>
+                    <p><strong>|</strong></p>
+                    <p id="datas-experiencia0">2006 - 2010</p>
+                    <p><strong>|</strong></p>
+                    <p id="cargo-experiencia0">Cargo</p>
+                </div>
+                <p id="descrição-experiencia0">Descrição</p>
+            </div>
+            <div class="background">
+                <div class="inline">
+                    <p id="nome-experiencia1">Nome da empresa</p>
+                    <p><strong>|</strong></p>
+                    <p id="datas-experiencia1">2010 - 2016</p>
+                    <p><strong>|</strong></p>
+                    <p id="cargo-experiencia1">Cargo</p>
+                </div>
+                <p id="descrição-experiencia1">Descrição</p>
+            </div>
+            <div class="background">
+                <div class="inline">
+                    <p id="nome-experiencia2">Nome da empresa</p>
+                    <p><strong>|</strong></p>
+                    <p id="datas-experiencia2">2016 - 2022</p>
+                    <p><strong>|</strong></p>
+                    <p id="cargo-experiencia2">Cargo</p>
+                </div>
+                <p id="descrição-experiencia2">Descrição</p>
+            </div>
+        </article>
+        <article class="realizacoes">
+            <h2 id="realizacoes">Realizações</h2>
+            <div class="background">
+                <div class="inline">
+                    <p id="nome-realizacao0">Realização</p>
+                    <p><strong>|</strong></p>
+                    <p id="data-realizacao0">2006 - 2010</p>
+                </div>
+                <p id="descricao-realizacao0">Descrição</p>
+            </div>
+            <div class="background">
+                <div class="inline">
+                    <p id="nome-realizacao1">Realização</p>
+                    <p><strong>|</strong></p>
+                    <p id="data-realizacao1">2010 - 2016</p>
+                </div>
+                <p id="descricao-realizacao1">Descrição</p>
+            </div>
+            <div class="background">
+                <div class="inline">
+                    <p id="nome-realizacao2">Realização</p>
+                    <p><strong>|</strong></p>
+                    <p id="data-realizacao2">2016 - 2022</p>
+                </div>
+                <p id="descricao-realizacao2">Descrição</p>
+            </div>
+        </article>
+    </main>
+    <footer class="grid-item"> Obrigado</footer>
+    <script src="script.js"></script>
+</body>
+</html>

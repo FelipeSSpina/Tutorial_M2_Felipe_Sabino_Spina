@@ -1,8 +1,13 @@
+
+
 $(document).ready(() => {
     $('#botaoJquery').click(() => {
-      $('#mensagem').text('Você clicou');
+      $('#mensagem').text('FOI CLICADO');
     });
 });
+
+
+
 
 $(document).ready(() => {
     $('#botaoMostrar').click(() => {
